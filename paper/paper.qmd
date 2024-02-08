@@ -20,8 +20,6 @@ bibliography: references.bib
 
 library(tidyverse)
 library(palmerpenguins)
-install.packages(tinytex)
-library(tinytex)
 ```
 
 
