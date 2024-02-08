@@ -139,8 +139,11 @@ analysis_data |>
 Talk way more about it. 
 
 
+We are interested in penguins and their silly business (@fig-penguins)
 
 ```{r}
+#| label: fig-penguins
+
 ggplot(data = penguins,
        aes(x = flipper_length_mm,
            y = body_mass_g)) +
