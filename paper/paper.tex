@@ -211,7 +211,7 @@
 \begin{abstract}
 First sentence. Second sentence. Third sentence. Fourth sentence.
 \end{abstract}
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, borderline west={3pt}{0pt}{shadecolor}, enhanced, frame hidden, breakable, interior hidden, boxrule=0pt]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, enhanced, boxrule=0pt, interior hidden, sharp corners, frame hidden, breakable]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
@@ -231,12 +231,6 @@ Hill, and Gorman (2020).
 We are interested in the height of Lake Huron
 (Figure~\ref{fig-huronheight})
 
-\begin{verbatim}
-geom_point: na.rm = FALSE
-stat_identity: na.rm = FALSE
-position_identity 
-\end{verbatim}
-
 \begin{figure}
 
 {\centering \includegraphics{paper_files/figure-pdf/fig-huronheight-1.pdf}
@@ -245,6 +239,19 @@ position_identity
 
 \caption{\label{fig-huronheight}Annual measurements of the height, in
 feet, of Lake Huron 1875-1972}
+
+\end{figure}
+
+We are interested in the height of 31 black cherry trees
+(Figure~\ref{fig-blackcherrytrees})
+
+\begin{figure}
+
+{\centering \includegraphics{paper_files/figure-pdf/fig-blackcherrytrees-1.pdf}
+
+}
+
+\caption{\label{fig-blackcherrytrees}Height of 31 Black Cherry Trees}
 
 \end{figure}
 

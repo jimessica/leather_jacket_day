@@ -51,6 +51,24 @@ tibble(year = 1875:1972,
   theme_bw()
 ```
 
+We are interested in the height of 31 black cherry trees (@fig-blackcherrytrees)
+```{r}
+#| label: fig-blackcherrytrees
+#| fig-cap: Height of 31 Black Cherry Trees
+#| echo: false
+
+datasets::trees |> 
+  as_tibble() |> 
+  ggplot(aes(y = Height)) +
+  geom_bar() +
+  labs(x = "Number of Black Cherry Trees", y = "Height (ft)") + 
+  theme_bw()
+
+```
+
+
+
+
 
 ```{r}
 #| label: fig-bills
