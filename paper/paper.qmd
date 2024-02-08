@@ -20,7 +20,6 @@ bibliography: references.bib
 
 library(tidyverse)
 library(palmerpenguins)
-library(tinytex)
 ```
 
 
@@ -144,13 +143,15 @@ We are interested in penguins and their silly business (@fig-penguins)
 
 ```{r}
 #| label: fig-penguins
+#| fig-cap: Ugly graph
+
 
 ggplot(data = penguins,
        aes(x = flipper_length_mm,
            y = body_mass_g)) +
   geom_point(aes(color = species, shape = sex),
-             size = 10,
-             alpha = 1) +
+             size = 20,
+             alpha = .7) +
   scale_color_manual(values = c("red", "pink", "red")) +
   labs(
     title = "Penguins are mean, ur mom's house",
@@ -163,6 +164,7 @@ ggplot(data = penguins,
   theme(
     legend.position = c(0.7, 0.9),
     plot.title.position = "plot",
+    title = element_text(size=24, face='bold'),
     plot.caption = element_text(hjust = 0, face = "italic"),
     plot.caption.position = "plot"
   )
