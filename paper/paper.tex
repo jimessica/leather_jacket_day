@@ -251,7 +251,7 @@
 \begin{abstract}
 First sentence. Second sentence. Third sentence. Fourth sentence.
 \end{abstract}
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, boxrule=0pt, enhanced, interior hidden, frame hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, interior hidden, sharp corners, enhanced, breakable, frame hidden, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
@@ -373,7 +373,7 @@ Talk way more about it.
 \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ penguins,}
        \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ flipper\_length\_mm,}
            \AttributeTok{y =}\NormalTok{ body\_mass\_g)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{color =}\NormalTok{ species),}
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{color =}\NormalTok{ species, }\AttributeTok{shape =}\NormalTok{ sex),}
              \AttributeTok{size =} \DecValTok{10}\NormalTok{,}
              \AttributeTok{alpha =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"pink"}\NormalTok{, }\StringTok{"red"}\NormalTok{)) }\SpecialCharTok{+}
@@ -382,12 +382,11 @@ Talk way more about it.
     \AttributeTok{subtitle =} \StringTok{"Toe length and mass for ADeLIe, ChINSTRAP and gEnToo peNGuiNS"}\NormalTok{,}
     \AttributeTok{x =} \StringTok{"Flipper length (houses)"}\NormalTok{,}
     \AttributeTok{y =} \StringTok{"Body mass (bluberries)"}\NormalTok{,}
-    \AttributeTok{color =} \StringTok{"Penguin species"}\NormalTok{,}
-    \AttributeTok{shape =} \StringTok{"Penguin species"}
+    \AttributeTok{color =} \StringTok{"Penguin species"}
 \NormalTok{  ) }\SpecialCharTok{+}
   \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
   \FunctionTok{theme}\NormalTok{(}
-    \AttributeTok{legend.position =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.7}\NormalTok{, }\FloatTok{0.7}\NormalTok{),}
+    \AttributeTok{legend.position =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.7}\NormalTok{, }\FloatTok{0.9}\NormalTok{),}
     \AttributeTok{plot.title.position =} \StringTok{"plot"}\NormalTok{,}
     \AttributeTok{plot.caption =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust =} \DecValTok{0}\NormalTok{, }\AttributeTok{face =} \StringTok{"italic"}\NormalTok{),}
     \AttributeTok{plot.caption.position =} \StringTok{"plot"}
@@ -396,7 +395,7 @@ Talk way more about it.
 \end{Shaded}
 
 \begin{verbatim}
-Warning: Removed 2 rows containing missing values (`geom_point()`).
+Warning: Removed 11 rows containing missing values (`geom_point()`).
 \end{verbatim}
 
 \begin{figure}[H]
