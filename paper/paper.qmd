@@ -65,8 +65,39 @@ datasets::trees |>
   theme_bw()
 
 ```
+We are interested in the weight of chicks in grams, by how old they were (@fig-chicks)
+
+```{r}
+
+#| label: chicks
+#| fig-cap: Weight versus age of chicks
+#| echo: false
 
 
+datasets::ChickWeight |> 
+  as_tibble() |> 
+  ggplot(aes(x = Time, y = weight, group = Chick)) +
+  geom_line() +
+  labs(x = "Age (days)", y = "Weight (gm)") +
+  theme_minimal()
+
+```
+
+
+We are interested in the number of sunspots from 1700 to 1988 (@fig-sunspots)
+
+```{r}
+#| label: fig-sunspots
+#| fig-cap: Number of sunspots from 1700 to 1988
+#| echo: false
+
+tibble(year = 1700:1988,
+       sunspots = as.numeric(datasets::sunspot.year) |> round(0)) |>
+  ggplot(aes(x = sunspots)) +
+  labs(x= "Number of sunspots", y = "Year") +
+  geom_histogram()
+
+```
 
 
 
@@ -106,6 +137,34 @@ analysis_data |>
 ```
 
 Talk way more about it. 
+
+
+
+```{r}
+ggplot(data = penguins,
+       aes(x = flipper_length_mm,
+           y = body_mass_g)) +
+  geom_point(aes(color = species),
+             size = 10,
+             alpha = 1) +
+  scale_color_manual(values = c("red", "pink", "red")) +
+  labs(
+    title = "Penguins are mean, ur mom's house",
+    subtitle = "Toe length and mass for ADeLIe, ChINSTRAP and gEnToo peNGuiNS",
+    x = "Flipper length (houses)",
+    y = "Body mass (bluberries)",
+    color = "Penguin species",
+    shape = "Penguin species"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = c(0.7, 0.7),
+    plot.title.position = "plot",
+    plot.caption = element_text(hjust = 0, face = "italic"),
+    plot.caption.position = "plot"
+  )
+
+```
 
 
 
