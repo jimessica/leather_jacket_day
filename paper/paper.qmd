@@ -35,6 +35,22 @@ The remainder of this paper is structured as follows. @sec-data....
 
 Some of our data is of penguins (@fig-bills), from @palmerpenguins.
 
+We are interested in the height of Lake Huron (@fig-huronheight)
+
+```{r}
+#| label: fig-huronheight
+#| fig-cap: Annual measurements of the height, in feet, of Lake Huron 1875-1972
+#| echo: false
+
+tibble(year = 1875:1972,
+       level = as.numeric(datasets::LakeHuron)) |>
+  ggplot(aes(x = year, y = level)) +
+  labs(x = "Year", 
+       y = "Height (ft)")
+  geom_point()
+```
+
+
 ```{r}
 #| label: fig-bills
 #| fig-cap: Bills of penguins
