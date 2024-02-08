@@ -20,6 +20,8 @@ bibliography: references.bib
 
 library(tidyverse)
 library(palmerpenguins)
+install.packages(tinytex)
+library(tinytex)
 ```
 
 
@@ -46,8 +48,9 @@ tibble(year = 1875:1972,
        level = as.numeric(datasets::LakeHuron)) |>
   ggplot(aes(x = year, y = level)) +
   labs(x = "Year", 
-       y = "Height (ft)")
-  geom_point()
+       y = "Height (ft)") +
+  geom_point() +
+  theme_bw()
 ```
 
 
